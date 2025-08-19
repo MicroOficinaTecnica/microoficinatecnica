@@ -137,7 +137,12 @@
     </div>
 
     <h1>💻 Micro Oficina Técnica</h1>
-    <p>Especialistas em manutenção de computadores e notebooks</p>
+    <p>Especialistas em manutenção e performance de computadores e notebooks!
+
+Formatação completa e configuração personalizada
+Otimização do sistema e aceleração de desempenho
+Instalação de softwares essenciais
+Limpeza interna com troca de pasta térmica e remoção de poeira</p>
     
     <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
     <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
