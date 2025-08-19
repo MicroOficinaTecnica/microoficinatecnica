@@ -27,6 +27,14 @@
       transform: translateY(-5px);
       box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #0077ff;
+    }
     h1 {
       margin-bottom: 10px;
       font-size: 24px;
@@ -63,6 +71,9 @@
 </head>
 <body>
   <div class="card">
+    <!-- Foto ou logo -->
+    <img src="https://via.placeholder.com/150" alt="Logo Micro Oficina Técnica" class="logo">
+
     <h1>💻 Micro Oficina Técnica</h1>
     <p>Especialistas em manutenção e performance</p>
     
@@ -74,3 +85,4 @@
   </div>
 </body>
 </html>
+
