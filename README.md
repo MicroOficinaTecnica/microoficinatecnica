@@ -75,7 +75,7 @@
     <img src="https://img.icons8.com/external-flat-icons-inmotus-design/120/0077ff/external-computer-repair-technology-flat-icons-inmotus-design.png" alt="Logo Micro Oficina Técnica" class="logo">
 
     <h1>💻 Micro Oficina Técnica</h1>
-    <p>Especialistas em manutenção e performance</p>
+    <p>Especialistas em manutenção de computadores e notbooks</p>
     
     <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
     <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
