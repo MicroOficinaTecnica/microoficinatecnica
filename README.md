@@ -1,13 +1,15 @@
-# microoficinatecnica
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Micro Oficina Técnica</title>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0077ff, #00d4ff);
       color: #333;
       text-align: center;
       padding: 40px;
@@ -15,32 +17,47 @@
     .card {
       background: #fff;
       border-radius: 20px;
-      padding: 30px;
-      max-width: 400px;
+      padding: 40px 30px;
+      max-width: 420px;
       margin: auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
     h1 {
       margin-bottom: 10px;
+      font-size: 24px;
+      color: #0077ff;
     }
     p {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       font-size: 16px;
-      color: #666;
+      color: #555;
     }
     .link {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin: 12px 0;
-      padding: 12px;
+      padding: 14px;
       background: #0077ff;
       color: white;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: bold;
-      transition: 0.3s;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .link i {
+      font-size: 18px;
     }
     .link:hover {
       background: #005fcc;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -49,11 +66,11 @@
     <h1>💻 Micro Oficina Técnica</h1>
     <p>Especialistas em manutenção e performance</p>
     
-    <a class="link" href="https://wa.me/5511983778199" target="_blank">📲 WhatsApp (11) 98377-8199</a>
-    <a class="link" href="https://wa.me/5511980450064" target="_blank">📲 WhatsApp (11) 98045-0064</a>
-    <a class="link" href="https://www.instagram.com/" target="_blank">📸 Instagram</a>
-    <a class="link" href="https://www.facebook.com/" target="_blank">📘 Facebook</a>
-    <a class="link" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank">⭐ Avalie no Google</a>
+    <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
+    <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
+    <a class="link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a class="link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a class="link" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank"><i class="fas fa-star"></i> Avalie no Google</a>
   </div>
 </body>
 </html>
