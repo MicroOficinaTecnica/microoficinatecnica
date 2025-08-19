@@ -1,4 +1,3 @@
-<img src="sua-logo.png" alt="Logo Micro Oficina Técnica" class="logo">
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -34,6 +33,7 @@
       object-fit: cover;
       margin-bottom: 20px;
       border: 4px solid #0077ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     h1 {
       margin-bottom: 10px;
@@ -71,8 +71,8 @@
 </head>
 <body>
   <div class="card">
-    <!-- Foto ou logo -->
-    <img src="https://via.placeholder.com/150" alt="Logo Micro Oficina Técnica" class="logo">
+    <!-- Logo personalizada -->
+    <img src="https://img.icons8.com/external-flat-icons-inmotus-design/120/0077ff/external-computer-repair-technology-flat-icons-inmotus-design.png" alt="Logo Micro Oficina Técnica" class="logo">
 
     <h1>💻 Micro Oficina Técnica</h1>
     <p>Especialistas em manutenção e performance</p>
@@ -85,4 +85,3 @@
   </div>
 </body>
 </html>
-
