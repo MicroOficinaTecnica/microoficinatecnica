@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<img src="sua-logo.png" alt="Logo Micro Oficina Técnica" class="logo">
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
