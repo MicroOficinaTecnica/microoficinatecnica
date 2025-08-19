@@ -67,15 +67,77 @@
       background: #005fcc;
       transform: scale(1.05);
     }
+    
+    /* Estilos para o logo personalizado */
+    .custom-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo-background {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0077ff, #00d4ff);
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .logo-icon {
+      color: white;
+      font-size: 50px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .logo-gear {
+      position: absolute;
+      font-size: 30px;
+      color: rgba(255, 255, 255, 0.8);
+      animation: rotate 10s linear infinite;
+    }
+    
+    .logo-gear:nth-child(1) {
+      top: 15px;
+      right: 15px;
+      animation-direction: reverse;
+      animation-duration: 15s;
+    }
+    
+    .logo-gear:nth-child(2) {
+      bottom: 15px;
+      left: 15px;
+      animation-duration: 12s;
+    }
+    
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <!-- Logo personalizada -->
-    <img src="https://img.icons8.com/external-flat-icons-inmotus-design/120/0077ff/external-computer-repair-technology-flat-icons-inmotus-design.png" alt="Logo Micro Oficina Técnica" class="logo">
+    <!-- Logo personalizado SVG -->
+    <div class="custom-logo">
+      <div class="logo-background">
+        <i class="logo-icon fas fa-laptop"></i>
+        <i class="logo-gear fas fa-cog"></i>
+        <i class="logo-gear fas fa-cog"></i>
+      </div>
+    </div>
 
     <h1>💻 Micro Oficina Técnica</h1>
-    <p>Especialistas em manutenção de computadores e notbooks</p>
+    <p>Especialistas em manutenção de computadores e notebooks</p>
     
     <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
     <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
