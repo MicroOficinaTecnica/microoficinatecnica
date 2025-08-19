@@ -148,7 +148,7 @@ Limpeza interna com troca de pasta térmica e remoção de poeira.</p>
     <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
     <a class="link" href="https://www.instagram.com/micro.oficina.tecnica?igsh=dDR0c3hsN3ZpNDZ2&utm_source=qr/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
     <a class="link" href="https://www.facebook.com/share/16vwpomZQ3/?mibextid=wwXIfr/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a class="link" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank"><i class="fas fa-star"></i> Avalie no Google</a>
+    <a class="link" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank"><i class="fas fa-star"></i> Avaliar no Google</a>
   </div>
 </body>
 </html>
