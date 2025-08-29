@@ -73,33 +73,31 @@
         }
         
         .modern-computer {
-            width: 180px;
-            height: 150px;
-            margin-bottom: 25px;
+            width: 120px;
+            height: 100px;
+            margin-bottom: 20px;
             position: relative;
-            perspective: 1000px;
         }
         
         .monitor {
-            width: 160px;
-            height: 100px;
+            width: 100px;
+            height: 70px;
             background: linear-gradient(135deg, #222, #444);
-            border-radius: 10px 10px 0 0;
+            border-radius: 8px 8px 0 0;
             position: relative;
             margin: 0 auto;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            transform: translateZ(0);
         }
         
         .screen {
-            width: 140px;
-            height: 80px;
+            width: 85px;
+            height: 55px;
             background: linear-gradient(45deg, #0077ff, #00d4ff);
-            border-radius: 5px;
+            border-radius: 4px;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 7px;
+            left: 7px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -108,7 +106,7 @@
         
         .screen-content {
             color: white;
-            font-size: 10px;
+            font-size: 8px;
             text-align: center;
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -117,31 +115,31 @@
         
         @keyframes text-scroll {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-100px); }
+            100% { transform: translateY(-70px); }
         }
         
         .stand {
-            width: 30px;
-            height: 20px;
+            width: 20px;
+            height: 15px;
             background: linear-gradient(to bottom, #444, #333);
             margin: 0 auto;
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 3px 3px;
         }
         
         .base {
-            width: 60px;
-            height: 5px;
+            width: 40px;
+            height: 4px;
             background: #333;
             margin: 0 auto;
             border-radius: 2px;
         }
         
         .keyboard {
-            width: 120px;
-            height: 40px;
+            width: 80px;
+            height: 30px;
             background: #222;
-            border-radius: 5px;
-            margin: 10px auto 0;
+            border-radius: 4px;
+            margin: 8px auto 0;
             position: relative;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
@@ -149,40 +147,38 @@
         .key {
             position: absolute;
             background: #111;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 1px;
         }
         
-        .key:nth-child(1) { top: 8px; left: 10px; }
-        .key:nth-child(2) { top: 8px; left: 20px; }
-        .key:nth-child(3) { top: 8px; left: 30px; }
-        .key:nth-child(4) { top: 8px; left: 40px; }
-        .key:nth-child(5) { top: 8px; left: 50px; }
-        .key:nth-child(6) { top: 8px; left: 60px; }
-        .key:nth-child(7) { top: 8px; left: 70px; }
-        .key:nth-child(8) { top: 8px; left: 80px; }
-        .key:nth-child(9) { top: 8px; left: 90px; }
-        .key:nth-child(10) { top: 8px; left: 100px; }
+        .key:nth-child(1) { top: 6px; left: 7px; }
+        .key:nth-child(2) { top: 6px; left: 15px; }
+        .key:nth-child(3) { top: 6px; left: 23px; }
+        .key:nth-child(4) { top: 6px; left: 31px; }
+        .key:nth-child(5) { top: 6px; left: 39px; }
+        .key:nth-child(6) { top: 6px; left: 47px; }
+        .key:nth-child(7) { top: 6px; left: 55px; }
+        .key:nth-child(8) { top: 6px; left: 63px; }
         
-        .key:nth-child(11) { top: 20px; left: 12px; }
-        .key:nth-child(12) { top: 20px; left: 24px; }
-        .key:nth-child(13) { top: 20px; left: 36px; }
-        .key:nth-child(14) { top: 20px; left: 48px; }
-        .key:nth-child(15) { top: 20px; left: 60px; }
-        .key:nth-child(16) { top: 20px; left: 72px; }
-        .key:nth-child(17) { top: 20px; left: 84px; }
-        .key:nth-child(18) { top: 20px; left: 96px; }
+        .key:nth-child(9) { top: 15px; left: 10px; }
+        .key:nth-child(10) { top: 15px; left: 18px; }
+        .key:nth-child(11) { top: 15px; left: 26px; }
+        .key:nth-child(12) { top: 15px; left: 34px; }
+        .key:nth-child(13) { top: 15px; left: 42px; }
+        .key:nth-child(14) { top: 15px; left: 50px; }
+        .key:nth-child(15) { top: 15px; left: 58px; }
+        .key:nth-child(16) { top: 15px; left: 66px; }
         
         .computer-glow {
             position: absolute;
-            width: 180px;
-            height: 10px;
+            width: 120px;
+            height: 8px;
             background: #00d4ff;
             border-radius: 50%;
-            bottom: -5px;
+            bottom: -2px;
             left: 0;
-            filter: blur(8px);
+            filter: blur(6px);
             opacity: 0.7;
             animation: pulse-glow 3s infinite alternate;
         }
@@ -193,13 +189,13 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 20px;
             color: #00d4ff;
         }
@@ -396,7 +392,7 @@
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .services-grid {
@@ -408,7 +404,7 @@
             }
             
             .modern-computer {
-                transform: scale(0.8);
+                transform: scale(0.9);
             }
             
             .whatsapp-robot {
@@ -455,7 +451,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <!-- Computador Moderno -->
+                <!-- Computador Moderno (menor) -->
                 <div class="modern-computer">
                     <div class="monitor">
                         <div class="screen">
@@ -472,8 +468,6 @@
                     <div class="stand"></div>
                     <div class="base"></div>
                     <div class="keyboard">
-                        <div class="key"></div>
-                        <div class="key"></div>
                         <div class="key"></div>
                         <div class="key"></div>
                         <div class="key"></div>
