@@ -72,70 +72,124 @@
             margin-bottom: 20px;
         }
         
-        .robot-container {
-            position: relative;
-            width: 150px;
+        .modern-computer {
+            width: 180px;
             height: 150px;
-            margin-bottom: 20px;
-        }
-        
-        .robot-head {
-            width: 80px;
-            height: 80px;
-            background: #0077ff;
-            border-radius: 40px;
-            margin: 0 auto;
+            margin-bottom: 25px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 119, 255, 0.7);
+            perspective: 1000px;
         }
         
-        .robot-eye {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #00ffcc;
-            border-radius: 50%;
-            top: 30px;
-            animation: blink 4s infinite;
-            box-shadow: 0 0 15px #00ffcc;
-        }
-        
-        .robot-eye.left {
-            left: 20px;
-        }
-        
-        .robot-eye.right {
-            right: 20px;
-        }
-        
-        @keyframes blink {
-            0%, 95%, 98%, 100% {
-                height: 20px;
-                top: 30px;
-            }
-            96%, 99% {
-                height: 2px;
-                top: 39px;
-            }
-        }
-        
-        .robot-body {
-            width: 100px;
-            height: 70px;
-            background: #0055cc;
+        .monitor {
+            width: 160px;
+            height: 100px;
+            background: linear-gradient(135deg, #222, #444);
             border-radius: 10px 10px 0 0;
-            margin: -10px auto 0;
             position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translateZ(0);
+        }
+        
+        .screen {
+            width: 140px;
+            height: 80px;
+            background: linear-gradient(45deg, #0077ff, #00d4ff);
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
-        .robot-gear {
-            color: #00d4ff;
-            font-size: 30px;
-            animation: rotate 10s linear infinite;
+        .screen-content {
+            color: white;
+            font-size: 10px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: text-scroll 15s infinite linear;
+        }
+        
+        @keyframes text-scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .stand {
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to bottom, #444, #333);
+            margin: 0 auto;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .base {
+            width: 60px;
+            height: 5px;
+            background: #333;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        .keyboard {
+            width: 120px;
+            height: 40px;
+            background: #222;
+            border-radius: 5px;
+            margin: 10px auto 0;
+            position: relative;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .key {
+            position: absolute;
+            background: #111;
+            width: 8px;
+            height: 8px;
+            border-radius: 1px;
+        }
+        
+        .key:nth-child(1) { top: 8px; left: 10px; }
+        .key:nth-child(2) { top: 8px; left: 20px; }
+        .key:nth-child(3) { top: 8px; left: 30px; }
+        .key:nth-child(4) { top: 8px; left: 40px; }
+        .key:nth-child(5) { top: 8px; left: 50px; }
+        .key:nth-child(6) { top: 8px; left: 60px; }
+        .key:nth-child(7) { top: 8px; left: 70px; }
+        .key:nth-child(8) { top: 8px; left: 80px; }
+        .key:nth-child(9) { top: 8px; left: 90px; }
+        .key:nth-child(10) { top: 8px; left: 100px; }
+        
+        .key:nth-child(11) { top: 20px; left: 12px; }
+        .key:nth-child(12) { top: 20px; left: 24px; }
+        .key:nth-child(13) { top: 20px; left: 36px; }
+        .key:nth-child(14) { top: 20px; left: 48px; }
+        .key:nth-child(15) { top: 20px; left: 60px; }
+        .key:nth-child(16) { top: 20px; left: 72px; }
+        .key:nth-child(17) { top: 20px; left: 84px; }
+        .key:nth-child(18) { top: 20px; left: 96px; }
+        
+        .computer-glow {
+            position: absolute;
+            width: 180px;
+            height: 10px;
+            background: #00d4ff;
+            border-radius: 50%;
+            bottom: -5px;
+            left: 0;
+            filter: blur(8px);
+            opacity: 0.7;
+            animation: pulse-glow 3s infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
         }
         
         h1 {
@@ -244,6 +298,94 @@
             font-size: 0.9rem;
         }
         
+        /* Robô do WhatsApp */
+        .whatsapp-robot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-robot:hover {
+            transform: scale(1.1);
+        }
+        
+        .robot-circle {
+            width: 100%;
+            height: 100%;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .robot-circle i {
+            font-size: 40px;
+            color: white;
+        }
+        
+        .robot-arm {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: #25D366;
+            border-radius: 10px;
+            top: -15px;
+            right: 15px;
+            transform-origin: bottom center;
+            animation: wave 3s infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+        }
+        
+        .robot-message {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: white;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            width: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .whatsapp-robot:hover .robot-message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         /* Animações para as engrenagens */
         @keyframes rotate {
             100% {
@@ -264,6 +406,28 @@
             .links-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .modern-computer {
+                transform: scale(0.8);
+            }
+            
+            .whatsapp-robot {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .robot-circle i {
+                font-size: 30px;
+            }
+            
+            .robot-arm {
+                width: 15px;
+                height: 30px;
+                top: -10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -279,19 +443,58 @@
         <i class="floating-icon fas fa-microchip" style="top: 70%; left: 40%; animation-duration: 17s;"></i>
     </div>
     
+    <!-- Robô do WhatsApp -->
+    <div class="whatsapp-robot" onclick="window.open('https://wa.me/5511983778199', '_blank')">
+        <div class="robot-message">Fale conosco no WhatsApp!</div>
+        <div class="robot-arm"></div>
+        <div class="robot-circle">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+    
     <div class="container">
         <header>
             <div class="logo-section">
-                <div class="robot-container">
-                    <div class="robot-head">
-                        <div class="robot-eye left"></div>
-                        <div class="robot-eye right"></div>
+                <!-- Computador Moderno -->
+                <div class="modern-computer">
+                    <div class="monitor">
+                        <div class="screen">
+                            <div class="screen-content">
+                                Micro Oficina Técnica<br>
+                                Manutenção Especializada<br>
+                                Formatação e Limpeza<br>
+                                Atendimento Rápido<br>
+                                Orçamento Sem Compromisso<br>
+                                Qualidade e Garantia
+                            </div>
+                        </div>
                     </div>
-                    <div class="robot-body">
-                        <i class="robot-gear fas fa-cog"></i>
+                    <div class="stand"></div>
+                    <div class="base"></div>
+                    <div class="keyboard">
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
                     </div>
+                    <div class="computer-glow"></div>
                 </div>
-                <h1>💻 Micro Oficina Técnica</h1>
+                
+                <h1>Micro Oficina Técnica</h1>
                 <p class="tagline">Soluções completas em tecnologia e manutenção</p>
             </div>
         </header>
