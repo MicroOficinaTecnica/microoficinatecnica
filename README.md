@@ -40,56 +40,6 @@
             animation: float 15s infinite linear;
         }
         
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px) rotate(360deg);
-            }
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-        
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .modern-computer {
-            width: 120px;
-            height: 100px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .monitor {
-            width: 100px;
-            height: 70px;
-            background: linear-gradient(135deg, #222, #444);
-            border-radius: 8px 8px 0 0;
-            position: relative;
-            margin: 0 auto;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
         .screen {
             width: 85px;
             height: 55px;
