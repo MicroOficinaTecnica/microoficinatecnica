@@ -21,17 +21,72 @@
       margin: auto;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
-    .logo {
-      width: 200px;
-      border-radius: 15px;
-      margin-bottom: 20px;
+
+    /* LOGO central */
+    .custom-logo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-background {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0077ff, #00d4ff);
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+    .logo-icon {
+      color: white;
+      font-size: 55px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ENGRENAGENS */
+    .logo-gear {
+      position: absolute;
+      font-size: 35px;
+      color: rgba(255, 255, 255, 0.8);
+      animation: rotate 10s linear infinite;
+    }
+    .gear1 { top: 10px; right: 10px; animation-duration: 14s; }
+    .gear2 { bottom: 10px; left: 10px; animation-duration: 10s; }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* CABOS / FIOS DE REDE */
+    .cable {
+      position: absolute;
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #00d4ff, #0077ff, #00d4ff);
+      animation: pulse 2s infinite alternate;
+    }
+    .cable.top { top: 30px; left: -40px; transform: rotate(10deg); }
+    .cable.bottom { bottom: 30px; right: -40px; transform: rotate(-10deg); }
+
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scaleX(0.8); }
+      100% { opacity: 1; transform: scaleX(1.2); }
+    }
+
     h1 {
       margin-bottom: 10px;
       font-size: 24px;
@@ -57,9 +112,7 @@
       font-size: 16px;
       transition: all 0.3s ease;
     }
-    .link i {
-      font-size: 18px;
-    }
+    .link i { font-size: 18px; }
     .link:hover {
       background: #005fcc;
       transform: scale(1.05);
@@ -68,15 +121,25 @@
 </head>
 <body>
   <div class="card">
-    <!-- Imagem enviada -->
-    <img src="logo.jpg" alt="Micro Oficina Técnica" class="logo">
+    <!-- Engrenagens + cabos -->
+    <div class="custom-logo">
+      <div class="logo-background">
+        <i class="logo-icon fas fa-laptop"></i>
+        <i class="logo-gear fas fa-cog gear1"></i>
+        <i class="logo-gear fas fa-cog gear2"></i>
+      </div>
+    </div>
+
+    <!-- Cabos de rede animados -->
+    <div class="cable top"></div>
+    <div class="cable bottom"></div>
 
     <h1>💻 Micro Oficina Técnica</h1>
     <p>Especialistas em manutenção e performance de computadores e notebooks!<br><br>
-Formatação completa e configuração personalizada.<br>
-Otimização do sistema e aceleração de desempenho.<br>
-Instalação de softwares essenciais.<br>
-Limpeza interna com troca de pasta térmica e remoção de poeira.</p>
+    Formatação completa e configuração personalizada.<br>
+    Otimização do sistema e aceleração de desempenho.<br>
+    Instalação de softwares essenciais.<br>
+    Limpeza interna com troca de pasta térmica e remoção de poeira.</p>
     
     <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
     <a class="link" href="https://wa.me/5511980450064" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064</a>
