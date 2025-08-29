@@ -27,12 +27,9 @@
       box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
     .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 200px;
+      border-radius: 15px;
       margin-bottom: 20px;
-      border: 4px solid #0077ff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     h1 {
@@ -67,81 +64,18 @@
       background: #005fcc;
       transform: scale(1.05);
     }
-    
-    /* Estilos para o logo personalizado */
-    .custom-logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .logo-background {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #0077ff, #00d4ff);
-      border-radius: 50%;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    
-    .logo-icon {
-      color: white;
-      font-size: 50px;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .logo-gear {
-      position: absolute;
-      font-size: 30px;
-      color: rgba(255, 255, 255, 0.8);
-      animation: rotate 10s linear infinite;
-    }
-    
-    .logo-gear:nth-child(1) {
-      top: 15px;
-      right: 15px;
-      animation-direction: reverse;
-      animation-duration: 15s;
-    }
-    
-    .logo-gear:nth-child(2) {
-      bottom: 15px;
-      left: 15px;
-      animation-duration: 12s;
-    }
-    
-    @keyframes rotate {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
   </style>
 </head>
 <body>
   <div class="card">
-    <!-- Logo personalizado SVG -->
-    <div class="custom-logo">
-      <div class="logo-background">
-        <i class="logo-icon fas fa-laptop"></i>
-        <i class="logo-gear fas fa-cog"></i>
-        <i class="logo-gear fas fa-cog"></i>
-      </div>
-    </div>
+    <!-- Imagem enviada -->
+    <img src="logo.jpg" alt="Micro Oficina Técnica" class="logo">
 
     <h1>💻 Micro Oficina Técnica</h1>
-    <p>Especialistas em manutenção e performance de computadores e notebooks!
-
-Formatação completa e configuração personalizada.
-Otimização do sistema e aceleração de desempenho.
-Instalação de softwares essenciais.
+    <p>Especialistas em manutenção e performance de computadores e notebooks!<br><br>
+Formatação completa e configuração personalizada.<br>
+Otimização do sistema e aceleração de desempenho.<br>
+Instalação de softwares essenciais.<br>
 Limpeza interna com troca de pasta térmica e remoção de poeira.</p>
     
     <a class="link" href="https://wa.me/5511983778199" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199</a>
