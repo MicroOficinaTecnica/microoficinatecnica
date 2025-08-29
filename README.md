@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -40,95 +41,152 @@
             animation: float 15s infinite linear;
         }
         
-        .screen {
-            width: 85px;
-            height: 55px;
-            background: linear-gradient(45deg, #0077ff, #00d4ff);
-            border-radius: 4px;
-            position: absolute;
-            top: 7px;
-            left: 7px;
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .main-robot {
+            width: 150px;
+            height: 180px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .robot-head {
+            width: 100px;
+            height: 100px;
+            background: #0077ff;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
             overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
-        .screen-content {
-            color: white;
-            font-size: 8px;
-            text-align: center;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            animation: text-scroll 15s infinite linear;
+        .robot-face {
+            width: 70px;
+            height: 70px;
+            background: #0055cc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
         }
         
-        @keyframes text-scroll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-70px); }
-        }
-        
-        .stand {
+        .robot-eye {
             width: 20px;
-            height: 15px;
-            background: linear-gradient(to bottom, #444, #333);
-            margin: 0 auto;
-            border-radius: 0 0 3px 3px;
-        }
-        
-        .base {
-            width: 40px;
-            height: 4px;
-            background: #333;
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-        
-        .keyboard {
-            width: 80px;
-            height: 30px;
-            background: #222;
-            border-radius: 4px;
-            margin: 8px auto 0;
+            height: 20px;
+            background: #00ffcc;
+            border-radius: 50%;
             position: relative;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            animation: blink 4s infinite;
+            box-shadow: 0 0 15px #00ffcc;
         }
         
-        .key {
-            position: absolute;
-            background: #111;
-            width: 6px;
-            height: 6px;
-            border-radius: 1px;
+        @keyframes blink {
+            0%, 95%, 98%, 100% {
+                height: 20px;
+            }
+            96%, 99% {
+                height: 2px;
+            }
         }
         
-        .key:nth-child(1) { top: 6px; left: 7px; }
-        .key:nth-child(2) { top: 6px; left: 15px; }
-        .key:nth-child(3) { top: 6px; left: 23px; }
-        .key:nth-child(4) { top: 6px; left: 31px; }
-        .key:nth-child(5) { top: 6px; left: 39px; }
-        .key:nth-child(6) { top: 6px; left: 47px; }
-        .key:nth-child(7) { top: 6px; left: 55px; }
-        .key:nth-child(8) { top: 6px; left: 63px; }
-        
-        .key:nth-child(9) { top: 15px; left: 10px; }
-        .key:nth-child(10) { top: 15px; left: 18px; }
-        .key:nth-child(11) { top: 15px; left: 26px; }
-        .key:nth-child(12) { top: 15px; left: 34px; }
-        .key:nth-child(13) { top: 15px; left: 42px; }
-        .key:nth-child(14) { top: 15px; left: 50px; }
-        .key:nth-child(15) { top: 15px; left: 58px; }
-        .key:nth-child(16) { top: 15px; left: 66px; }
-        
-        .computer-glow {
-            position: absolute;
+        .robot-body {
             width: 120px;
-            height: 8px;
+            height: 80px;
+            background: #0055cc;
+            border-radius: 10px 10px 0 0;
+            margin: -10px auto 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .robot-screen {
+            width: 80px;
+            height: 50px;
+            background: linear-gradient(45deg, #0077ff, #00d4ff);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .robot-gears {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .robot-gear {
+            color: #00d4ff;
+            font-size: 20px;
+            animation: rotate 5s linear infinite;
+            position: absolute;
+        }
+        
+        .robot-gear:nth-child(1) {
+            top: 0;
+            right: 0;
+        }
+        
+        .robot-gear:nth-child(2) {
+            top: 15px;
+            right: 15px;
+            animation-duration: 7s;
+            animation-direction: reverse;
+        }
+        
+        .robot-glow {
+            position: absolute;
+            width: 150px;
+            height: 10px;
             background: #00d4ff;
             border-radius: 50%;
-            bottom: -2px;
+            bottom: -5px;
             left: 0;
-            filter: blur(6px);
+            filter: blur(8px);
             opacity: 0.7;
             animation: pulse-glow 3s infinite alternate;
         }
@@ -139,13 +197,13 @@
         }
         
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             color: #00d4ff;
         }
@@ -342,7 +400,7 @@
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .services-grid {
@@ -353,8 +411,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .modern-computer {
-                transform: scale(0.9);
+            .main-robot {
+                transform: scale(0.8);
             }
             
             .whatsapp-robot {
@@ -401,41 +459,24 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <!-- Computador Moderno (menor) -->
-                <div class="modern-computer">
-                    <div class="monitor">
-                        <div class="screen">
-                            <div class="screen-content">
-                                Micro Oficina Técnica<br>
-                                Manutenção Especializada<br>
-                                Formatação e Limpeza<br>
-                                Atendimento Rápido<br>
-                                Orçamento Sem Compromisso<br>
-                                Qualidade e Garantia
-                            </div>
+                <!-- Robô Animado Principal -->
+                <div class="main-robot">
+                    <div class="robot-head">
+                        <div class="robot-face">
+                            <div class="robot-eye"></div>
+                            <div class="robot-eye"></div>
                         </div>
                     </div>
-                    <div class="stand"></div>
-                    <div class="base"></div>
-                    <div class="keyboard">
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
-                        <div class="key"></div>
+                    <div class="robot-body">
+                        <div class="robot-screen">
+                            Micro Oficina Técnica
+                        </div>
+                        <div class="robot-gears">
+                            <i class="robot-gear fas fa-cog"></i>
+                            <i class="robot-gear fas fa-cog"></i>
+                        </div>
                     </div>
-                    <div class="computer-glow"></div>
+                    <div class="robot-glow"></div>
                 </div>
                 
                 <h1>Micro Oficina Técnica</h1>
