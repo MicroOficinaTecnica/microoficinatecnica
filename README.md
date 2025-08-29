@@ -22,6 +22,8 @@
             position: relative;
         }
         
+ Dots: 0.1em
+        
         /* Animações de fundo */
         .background-elements {
             position: fixed;
@@ -38,15 +40,18 @@
             opacity: 0.1;
             color: #fff;
             font-size: 24px;
-            animation: float 15s infinite linear;
+            animation: float 15s infinite ease-in-out;
         }
         
         @keyframes float {
             0% {
                 transform: translateY(0) translateX(0) rotate(0deg);
             }
+            50% {
+                transform: translateY(-50vh) translateX(50px) rotate(180deg);
+            }
             100% {
-                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                transform: translateY(0) translateX(0) rotate(360deg);
             }
         }
         
@@ -73,127 +78,135 @@
             margin-bottom: 20px;
         }
         
-        .main-robot {
-            width: 150px;
-            height: 180px;
-            margin-bottom: 25px;
+        .robot-container {
             position: relative;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
         }
         
         .robot-head {
             width: 100px;
             height: 100px;
-            background: #0077ff;
+            background: linear-gradient(45deg, #0077ff, #00aaff);
             border-radius: 50%;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 119, 255, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            box-shadow: 0 0 25px rgba(0, 119, 255, 0.8);
+            animation: glow 3s infinite ease-in-out;
         }
         
-        .robot-face {
-            width: 70px;
-            height: 70px;
-            background: #0055cc;
+        @keyframes glow {
+            0% { box-shadow: 0 0 25px rgba(0, 119, 255, 0.8); }
+            50% { box-shadow: 0 0 40px rgba(0, 119, 255, 1); }
+            100% { box-shadow: 0 0 25px rgba(0, 119, 255, 0.8); }
+        }
+        
+        .robot-antenna {
+            position: absolute;
+            width: 8px;
+            height: 30px;
+            background: #00ffcc;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+            animation: pulse-antenna 2s infinite;
+        }
+        
+        .antenna-tip {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #00ffcc;
             border-radius: 50%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 15px;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+        
+        @keyframes pulse-antenna {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+            100% { transform: translateX(-50%) scale(1); }
         }
         
         .robot-eye {
-            width: 20px;
-            height: 20px;
+            position: absolute;
+            width: 24px;
+            height: 24px;
             background: #00ffcc;
             border-radius: 50%;
-            position: relative;
+            top: 35px;
             animation: blink 4s infinite;
             box-shadow: 0 0 15px #00ffcc;
         }
         
+        .robot-eye.left {
+            left: 25px;
+        }
+        
+        .robot-eye.right {
+            right: 25px;
+        }
+        
         @keyframes blink {
             0%, 95%, 98%, 100% {
-                height: 20px;
+                height: 24px;
+                top: 35px;
             }
             96%, 99% {
-                height: 2px;
+                height: 4px;
+                top: 45px;
             }
         }
         
         .robot-body {
             width: 120px;
             height: 80px;
-            background: #0055cc;
-            border-radius: 10px 10px 0 0;
-            margin: -10px auto 0;
+            background: linear-gradient(45deg, #0055cc, #0077ff);
+            border-radius: 15px 15px 0 0;
+            margin: -15px auto 0;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .robot-screen {
-            width: 80px;
-            height: 50px;
-            background: linear-gradient(45deg, #0077ff, #00d4ff);
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-            text-align: center;
-            padding: 5px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-        
-        .robot-gears {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
         
         .robot-gear {
             color: #00d4ff;
-            font-size: 20px;
-            animation: rotate 5s linear infinite;
+            font-size: 36px;
+            animation: rotate 8s linear infinite;
+        }
+        
+        .robot-arm {
             position: absolute;
+            width: 20px;
+            height: 40px;
+            background: #0077ff;
+            border-radius: 10px;
+            top: 20px;
+            transform-origin: top center;
+            animation: wave-arm 2s infinite ease-in-out;
         }
         
-        .robot-gear:nth-child(1) {
-            top: 0;
-            right: 0;
+        .robot-arm.left {
+            left: -20px;
+            transform: rotate(15deg);
         }
         
-        .robot-gear:nth-child(2) {
-            top: 15px;
-            right: 15px;
-            animation-duration: 7s;
-            animation-direction: reverse;
+        .robot-arm.right {
+            right: -20px;
+            transform: rotate(-15deg);
         }
         
-        .robot-glow {
-            position: absolute;
-            width: 150px;
-            height: 10px;
-            background: #00d4ff;
-            border-radius: 50%;
-            bottom: -5px;
-            left: 0;
-            filter: blur(8px);
-            opacity: 0.7;
-            animation: pulse-glow 3s infinite alternate;
-        }
-        
-        @keyframes pulse-glow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+        @keyframes wave-arm {
+            0% { transform: rotate(15deg); }
+            50% { transform: rotate(-15deg); }
+            100% { transform: rotate(15deg); }
         }
         
         h1 {
@@ -331,15 +344,9 @@
         }
         
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         
         .robot-circle i {
@@ -360,12 +367,8 @@
         }
         
         @keyframes wave {
-            0%, 100% {
-                transform: rotate(-10deg);
-            }
-            50% {
-                transform: rotate(20deg);
-            }
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(20deg); }
         }
         
         .robot-message {
@@ -392,9 +395,7 @@
         
         /* Animações para as engrenagens */
         @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
+            100% { transform: rotate(360deg); }
         }
         
         /* Responsividade */
@@ -409,10 +410,6 @@
             
             .links-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .main-robot {
-                transform: scale(0.8);
             }
             
             .whatsapp-robot {
@@ -432,13 +429,45 @@
                 top: -10px;
                 right: 10px;
             }
+            
+            .robot-container {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .robot-head {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .robot-body {
+                width: 100px;
+                height: 60px;
+            }
+            
+            .robot-gear {
+                font-size: 30px;
+            }
+            
+            .robot-eye {
+                width: 20px;
+                height: 20px;
+                top: 28px;
+            }
+            
+            .robot-eye.left {
+                left: 20px;
+            }
+            
+            .robot-eye.right {
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Elementos de fundo animados -->
     <div class="background-elements">
-        <!-- Ícones flutuantes -->
         <i class="floating-icon fas fa-desktop" style="top: 10%; left: 5%; animation-duration: 20s;"></i>
         <i class="floating-icon fas fa-laptop" style="top: 20%; left: 80%; animation-duration: 25s;"></i>
         <i class="floating-icon fas fa-network-wired" style="top: 40%; left: 15%; animation-duration: 18s;"></i>
@@ -459,26 +488,20 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <!-- Robô Animado Principal -->
-                <div class="main-robot">
+                <div class="robot-container">
                     <div class="robot-head">
-                        <div class="robot-face">
-                            <div class="robot-eye"></div>
-                            <div class="robot-eye"></div>
+                        <div class="robot-antenna">
+                            <div class="antenna-tip"></div>
                         </div>
+                        <div class="robot-eye left"></div>
+                        <div class="robot-eye right"></div>
                     </div>
                     <div class="robot-body">
-                        <div class="robot-screen">
-                            Micro Oficina Técnica
-                        </div>
-                        <div class="robot-gears">
-                            <i class="robot-gear fas fa-cog"></i>
-                            <i class="robot-gear fas fa-cog"></i>
-                        </div>
+                        <div class="robot-arm left"></div>
+                        <div class="robot-arm right"></div>
+                        <i class="robot-gear fas fa-cog"></i>
                     </div>
-                    <div class="robot-glow"></div>
                 </div>
-                
                 <h1>Micro Oficina Técnica</h1>
                 <p class="tagline">Soluções completas em tecnologia e manutenção</p>
             </div>
@@ -548,7 +571,7 @@
         </section>
         
         <footer>
-            <p>Micro Oficina Técnica &copy; 2023 - Especialistas em manutenção e performance de computadores e notebooks</p>
+            <p>Micro Oficina Técnica &copy; 2025 - Especialistas em manutenção e performance de computadores e notebooks</p>
         </footer>
     </div>
 
