@@ -1,116 +1,395 @@
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Micro Oficina Técnica — Manutenção de Computadores e Notebooks</title>
-  <meta name="description" content="Manutenção e performance de computadores e notebooks. Formatação, upgrade, otimização, limpeza interna e instalação de softwares. Atendimento rápido na Zona Leste de SP." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <style>
-    :root{--primary:#00d4ff;--secondary:#0077ff;--dark:#0b1020;--card:#10182f;--text:#e6eefc;--muted:#b8c7e6;}
-    *{box-sizing:border-box} html,body{height:100%} body{margin:0; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial; color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, rgba(0,119,255,.35), transparent 60%), radial-gradient(900px 500px at 90% 20%, rgba(0,212,255,.35), transparent 60%), linear-gradient(160deg, #0a0f1f, #0a1228 60%, #0d1433); overflow-x:hidden;}
-    .bg-anim{position:fixed; inset:0; z-index:-2; overflow:hidden; filter:blur(30px) saturate(120%);}
-    .blob{position:absolute; width:40vmax; height:40vmax; border-radius:50%; opacity:.55; mix-blend-mode:screen}
-    .b1{background:radial-gradient(circle at 30% 30%, var(--secondary), transparent 60%); animation: drift 22s ease-in-out infinite}
-    .b2{background:radial-gradient(circle at 70% 40%, var(--primary), transparent 60%); animation: drift 30s ease-in-out infinite reverse}
-    .b3{background:radial-gradient(circle at 50% 70%, #6a5cff, transparent 60%); animation: drift 26s ease-in-out infinite}
-    @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10vw,-6vh) scale(1.15)}}
-    .particles{position:fixed; inset:0; pointer-events:none; z-index:-1}
-    .particle{position:absolute; width:2px; height:2px; background:rgba(255,255,255,.35); border-radius:50%; animation: float 12s linear infinite}
-    @keyframes float{from{transform:translateY(100vh)} to{transform:translateY(-10vh)}}
-    header{padding:28px 22px; max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:14px; font-weight:800; letter-spacing:.3px}
-    .logo{width:56px; height:56px; border-radius:50%; display:grid; place-items:center; color:white; background:conic-gradient(from 180deg, var(--secondary), var(--primary)); box-shadow:0 8px 22px rgba(0, 119, 255, .35); position:relative; overflow:hidden}
-    .logo .gear{position:absolute; font-size:18px; opacity:.8; animation:spin 8s linear infinite}
-    .logo .gear.g2{right:6px; bottom:6px; font-size:14px; animation-duration:12s; animation-direction:reverse}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .cta{display:flex; gap:10px; flex-wrap:wrap}
-    .btn{background:linear-gradient(135deg, var(--secondary), var(--primary)); padding:12px 16px; color:white; text-decoration:none; font-weight:700; border-radius:14px; display:inline-flex; gap:10px; align-items:center; box-shadow:0 8px 20px rgba(0,212,255,.25); transition:.25s transform, .25s box-shadow; border:1px solid rgba(255,255,255,.08)}
-    .btn:hover{transform:translateY(-2px); box-shadow:0 12px 26px rgba(0,212,255,.35)}
-    .btn.alt{background:#121a33}
-    .hero{max-width:1200px; margin:20px auto 60px; padding:0 22px; display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
-    @media (max-width:900px){.hero{grid-template-columns:1fr;text-align:center} .cta{justify-content:center}}
-    h1{font-size:clamp(28px, 4vw, 48px); margin:8px 0 14px; line-height:1.1}
-    .sub{color:var(--muted); font-size:clamp(14px, 2.2vw, 18px); max-width:60ch}
-    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 26px}
-    .chip{background:#0f1730; border:1px solid rgba(255,255,255,.08); border-radius:999px; padding:9px 13px; font-weight:600; font-size:14px; display:inline-flex; gap:8px; align-items:center}
-    .scene{position:relative; aspect-ratio:1/1; max-width:520px; width:100%; margin-inline:auto}
-    .card3d{position:absolute; inset:auto; left:0; right:0; bottom:0; height:86%; background:linear-gradient(180deg, #111a38, #0e162f); border-radius:24px; border:1px solid rgba(255,255,255,.06); box-shadow:0 20px 60px rgba(0,0,0,.45); transform:perspective(800px) rotateX(6deg); overflow:hidden}
-    .grid{position:absolute; inset:0; background:repeating-linear-gradient(transparent 0 28px, rgba(255,255,255,.04) 28px 29px), repeating-linear-gradient(90deg, transparent 0 28px, rgba(255,255,255,.04) 28px 29px); mask-image: linear-gradient(to top, black, transparent 88%);}
-    .robot{position:absolute; left:50%; top:14%; transform:translateX(-50%); width:62%; filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
-    .float{animation: levitate 4s ease-in-out infinite}
-    @keyframes levitate{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-6px)}}
-    .devices{position:absolute; bottom:12%; left:50%; transform:translateX(-50%); width:82%; display:flex; align-items:end; justify-content:space-between}
-    .device{background:#0a132b; border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:10px; width:31%; height:90px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.03)}
-    .cable{position:absolute; height:4px; background:linear-gradient(90deg, var(--secondary), var(--primary)); filter:drop-shadow(0 0 6px rgba(0,212,255,.5)); border-radius:999px}
-    .c1{left:14%; right:50%; bottom:28%}
-    .c2{left:50%; right:14%; bottom:22%}
-    section{max-width:1200px; margin:0 auto; padding:0 22px 60px}
-    .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
-    @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25)}
-    .card h3{margin:6px 0 8px; font-size:18px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
-    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); margin:40px 0}
-    footer{max-width:1200px; margin:0 auto; padding:24px 22px 80px; color:var(--muted)}
-    .fab{position:fixed; right:18px; bottom:18px; background:#25D366; color:white; width:56px; height:56px; border-radius:999px; display:grid; place-items:center; font-size:26px; box-shadow:0 12px 24px rgba(37,211,102,.35); z-index:50}
-    .fab:focus{outline:3px solid rgba(255,255,255,.35)}
-    .reveal{opacity:0; transform:translateY(14px); transition: .6s ease}
-    .reveal.visible{opacity:1; transform:none}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Oficina Técnica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #003a7f, #0066cc, #0099ff);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            position: relative;
+        }
+        
+        /* Animações de fundo */
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            color: #fff;
+            font-size: 24px;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .robot-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .robot-head {
+            width: 80px;
+            height: 80px;
+            background: #0077ff;
+            border-radius: 40px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.7);
+        }
+        
+        .robot-eye {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00ffcc;
+            border-radius: 50%;
+            top: 30px;
+            animation: blink 4s infinite;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+        
+        .robot-eye.left {
+            left: 20px;
+        }
+        
+        .robot-eye.right {
+            right: 20px;
+        }
+        
+        @keyframes blink {
+            0%, 95%, 98%, 100% {
+                height: 20px;
+                top: 30px;
+            }
+            96%, 99% {
+                height: 2px;
+                top: 39px;
+            }
+        }
+        
+        .robot-body {
+            width: 100px;
+            height: 70px;
+            background: #0055cc;
+            border-radius: 10px 10px 0 0;
+            margin: -10px auto 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .robot-gear {
+            color: #00d4ff;
+            font-size: 30px;
+            animation: rotate 10s linear infinite;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .service-description {
+            color: #ccc;
+            font-size: 1rem;
+        }
+        
+        .contact-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: #00d4ff;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            background: #0077ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+        }
+        
+        .link i {
+            font-size: 20px;
+        }
+        
+        .link:hover {
+            background: #005fcc;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.6);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Animações para as engrenagens */
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="bg-anim" aria-hidden="true">
-    <div class="blob b1" style="left:-10vmax; top:-10vmax"></div>
-    <div class="blob b2" style="right:-8vmax; top:10vmax"></div>
-    <div class="blob b3" style="left:20vmax; bottom:-14vmax"></div>
-  </div>
-  <div class="particles" aria-hidden="true">
-    <div class="particle" style="left:5%; animation-duration:14s"></div>
-    <div class="particle" style="left:25%; animation-duration:18s; animation-delay:-3s"></div>
-    <div class="particle" style="left:45%; animation-duration:12s; animation-delay:-6s"></div>
-    <div class="particle" style="left:65%; animation-duration:16s; animation-delay:-1s"></div>
-    <div class="particle" style="left:85%; animation-duration:20s; animation-delay:-5s"></div>
-  </div>
-
-  <header>
-    <div class="brand" aria-label="Micro Oficina Técnica">
-      <div class="logo" aria-hidden="true">
-        <i class="fa-solid fa-robot"></i>
-        <i class="fa-solid fa-gear gear" style="left:6px; top:6px"></i>
-        <i class="fa-solid fa-gear gear g2"></i>
-      </div>
-      <div>
-        <div style="font-size:14px; color:var(--muted); font-weight:600">Desde 2005</div>
-        <div style="font-size:18px">Micro Oficina Técnica</div>
-      </div>
+    <!-- Elementos de fundo animados -->
+    <div class="background-elements">
+        <!-- Ícones flutuantes -->
+        <i class="floating-icon fas fa-desktop" style="top: 10%; left: 5%; animation-duration: 20s;"></i>
+        <i class="floating-icon fas fa-laptop" style="top: 20%; left: 80%; animation-duration: 25s;"></i>
+        <i class="floating-icon fas fa-network-wired" style="top: 40%; left: 15%; animation-duration: 18s;"></i>
+        <i class="floating-icon fas fa-tools" style="top: 60%; left: 75%; animation-duration: 22s;"></i>
+        <i class="floating-icon fas fa-cog" style="top: 30%; left: 50%; animation-duration: 15s;"></i>
+        <i class="floating-icon fas fa-microchip" style="top: 70%; left: 40%; animation-duration: 17s;"></i>
     </div>
-    <nav class="cta" aria-label="Ações rápidas">
-      <a class="btn" href="#servicos"><i class="fa-solid fa-screwdriver-wrench"></i> Serviços</a>
-      <a class="btn alt" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank" rel="noopener"><i class="fa-solid fa-star"></i> Avaliar</a>
-    </nav>
-  </header>
+    
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <div class="robot-container">
+                    <div class="robot-head">
+                        <div class="robot-eye left"></div>
+                        <div class="robot-eye right"></div>
+                    </div>
+                    <div class="robot-body">
+                        <i class="robot-gear fas fa-cog"></i>
+                    </div>
+                </div>
+                <h1>💻 Micro Oficina Técnica</h1>
+                <p class="tagline">Soluções completas em tecnologia e manutenção</p>
+            </div>
+        </header>
+        
+        <section class="services-grid">
+            <div class="service-card">
+                <i class="service-icon fas fa-laptop"></i>
+                <h3 class="service-title">Manutenção de Notebooks</h3>
+                <p class="service-description">Conserto, limpeza e otimização completa do seu notebook com peças de qualidade e garantia.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="service-icon fas fa-desktop"></i>
+                <h3 class="service-title">Computadores Desktop</h3>
+                <p class="service-description">Montagem, manutenção e upgrade de computadores para todos os usos e necessidades.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="service-icon fas fa-network-wired"></i>
+                <h3 class="service-title">Redes e Conectividade</h3>
+                <p class="service-description">Instalação e configuração de redes cabeadas e wireless, roteadores e switches.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="service-icon fas fa-tachometer-alt"></i>
+                <h3 class="service-title">Otimização de Sistema</h3>
+                <p class="service-description">Formatação, instalação de software e configuração personalizada para máximo desempenho.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="service-icon fas fa-wind"></i>
+                <h3 class="service-title">Limpeza Térmica</h3>
+                <p class="service-description">Limpeza interna completa com troca de pasta térmica para melhor refrigeração.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="service-icon fas fa-tools"></i>
+                <h3 class="service-title">Reparo Especializado</h3>
+                <p class="service-description">Conserto de placas, substituição de componentes e solução de problemas complexos.</p>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <h2 class="contact-title">Entre em Contato</h2>
+            <div class="links-grid">
+                <a class="link" href="https://wa.me/5511983778199" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp (11) 98377-8199
+                </a>
+                
+                <a class="link" href="https://wa.me/5511980450064" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp (11) 98045-0064
+                </a>
+                
+                <a class="link" href="https://www.instagram.com/micro.oficina.tecnica?igsh=dDR0c3hsN3ZpNDZ2&utm_source=qr/" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                
+                <a class="link" href="https://www.facebook.com/share/16vwpomZQ3/?mibextid=wwXIfr/" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                
+                <a class="link" href="https://www.google.com/search?q=micro+oficina+t%C3%A9cnica+s%C3%A3o+paulo" target="_blank">
+                    <i class="fas fa-star"></i> Avaliar no Google
+                </a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Micro Oficina Técnica &copy; 2023 - Especialistas em manutenção e performance de computadores e notebooks</p>
+        </footer>
+    </div>
 
-  <main>
-    <!-- resto do site permanece igual, sem mudanças nos pacotes ou formulário -->
-  </main>
-
-  <footer>
-    <small>© <span id="year"></span> Micro Oficina Técnica — Manutenção de Computadores e Notebooks • Zona Leste — São Paulo/SP</small>
-  </footer>
-
-  <a class="fab" href="https://wa.me/5511983778199" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible') }) }, { threshold:.2 });
-    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
-  </script>
+    <script>
+        // Adiciona mais ícones flutuantes dinamicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.querySelector('.background-elements');
+            const icons = ['fa-desktop', 'fa-laptop', 'fa-network-wired', 'fa-tools', 'fa-cog', 'fa-microchip', 'fa-server', 'fa-hdd', 'fa-memory', 'fa-ethernet'];
+            
+            for (let i = 0; i < 15; i++) {
+                const icon = document.createElement('i');
+                icon.className = 'floating-icon fas ' + icons[Math.floor(Math.random() * icons.length)];
+                
+                // Posição aleatória
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                
+                // Duração aleatória da animação
+                const duration = 15 + Math.random() * 15;
+                
+                icon.style.top = top + '%';
+                icon.style.left = left + '%';
+                icon.style.animationDuration = duration + 's';
+                icon.style.opacity = 0.05 + Math.random() * 0.1;
+                icon.style.fontSize = (15 + Math.random() * 20) + 'px';
+                
+                background.appendChild(icon);
+            }
+        });
+    </script>
 </body>
 </html>
